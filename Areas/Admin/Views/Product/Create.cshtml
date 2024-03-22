@@ -1,0 +1,75 @@
+﻿
+@model ProductVM
+<form method="post" enctype="multipart/form-data">
+    <div class="border p-3 mt-4">
+        <div class="row pb-2">
+            <h2>Create Category</h2>
+            <hr />
+        </div>
+        <div asp-validation-summary="All"></div>
+        <div class="mb-3">
+            <label>Product Category</label>
+            <select asp-for="@Model.Product.CategoryId" asp-items="@Model.CategoryList" class="form-select">
+                <option selected disabled>Select Category</option>
+            </select>
+            <span asp-validation-for="Product.CategoryId" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label>Product title</label>
+            <input asp-for="Product.Title" class="form-control" />
+            <span asp-validation-for="Product.Title" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label>Product Description</label>
+            <input asp-for="Product.Description" class="form-control" />
+            <span asp-validation-for="Product.Description" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label>Product Author</label>
+            <input asp-for="Product.Author" class="form-control" />
+            <span asp-validation-for="Product.Author" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label>Product ISBN</label>
+            <input asp-for="Product.ISBN" class="form-control" />
+            <span asp-validation-for="Product.ISBN" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label>Product List Price</label>
+            <input asp-for="Product.ListPrice" class="form-control" />
+            <span asp-validation-for="Product.ListPrice" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label>Product Price</label>
+            <input asp-for="Product.Price" class="form-control" />
+            <span asp-validation-for="Product.Price" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label>Product Price50</label>
+            <input asp-for="Product.Price50" class="form-control" />
+            <span asp-validation-for="Product.Price50" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label>Product Price100</label>
+            <input asp-for="Product.Price100" class="form-control" />
+            <span asp-validation-for="Product.Price100" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label>Product Image</label>
+            <input type="file" class="form-control" />
+        </div> 
+        <div class="row">
+            <div class="col-6 col-md-3">
+                <button type="submit" class="btn btn-outline-warning form-control">Create</button>
+            </div>
+            <div class="col-6 col-md-3">
+                <a asp-controller="Product" asp-action="Index" class="btn btn-outline-dark form-control">Back to list</a>
+            </div>
+        </div>
+    </div>
+</form>
+@section Scripts {
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+}

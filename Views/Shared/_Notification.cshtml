@@ -1,0 +1,8 @@
+﻿@if (TempData["succes"] is not null)
+{
+    <h2>@TempData["succes"]</h2>
+}
+@if (TempData["error"] is not null)
+{
+    <h2>@TempData["error"]</h2>
+}

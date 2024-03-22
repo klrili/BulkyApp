@@ -1,0 +1,65 @@
+﻿@model Product
+<form method="post">
+    <div class="border p-3 mt-4">
+        <div class="row pb-2">
+            <h2>Edit Product</h2>
+            <hr />
+        </div>
+        <div asp-validation-summary="All"></div>
+        <input asp-for="Id" hidden />
+
+        <div class="mb-3">
+            <label>Product title</label>
+            <input asp-for="Title" class="form-control" />
+            <span asp-validation-for="Title" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label>Product Description</label>
+            <input asp-for="Description" class="form-control" />
+            <span asp-validation-for="Description" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label>Product Author</label>
+            <input asp-for="Author" class="form-control" />
+            <span asp-validation-for="Author" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label>Product ISBN</label>
+            <input asp-for="ISBN" class="form-control" />
+            <span asp-validation-for="ISBN" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label>Product List Price</label>
+            <input asp-for="ListPrice" class="form-control" />
+            <span asp-validation-for="ListPrice" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label>Product Price</label>
+            <input asp-for="Price" class="form-control" />
+            <span asp-validation-for="Price" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label>Product Price50</label>
+            <input asp-for="Price50" class="form-control" />
+            <span asp-validation-for="Price50" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label>Product Price100</label>
+            <input asp-for="Price100" class="form-control" />
+            <span asp-validation-for="Price100" class="text-danger"></span>
+        </div>
+        <div class="row">
+            <div class="col-6 col-md-3">
+                <button type="submit" class="btn btn-outline-warning form-control">Submit</button>
+            </div>
+            <div class="col-6 col-md-3">
+                <a asp-controller="Product" asp-action="Index" class="btn btn-outline-dark form-control">Back to list</a>
+            </div>
+        </div>
+    </div>
+</form>
+@section Scripts {
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+}
